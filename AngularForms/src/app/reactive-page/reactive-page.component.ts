@@ -40,11 +40,11 @@ function emailMatcher(c: AbstractControl): { [key: string]: boolean } | null {
 }
 
 @Component({
-  selector: 'nc-about-page',
-  templateUrl: './about-page.component.html',
-  styleUrls: ['./about-page.component.css']
+  selector: 'nc-reactive-page',
+  templateUrl: './reactive-page.component.html',
+  styleUrls: ['./reactive-page.component.css']
 })
-export class AboutPageComponent implements OnInit, AfterViewInit {
+export class ReactivePageComponent implements OnInit, AfterViewInit {
   customerForm: FormGroup;
   emailMessage: string;
 
