@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from './Models/employee.model';
 
 @Component({
   selector: 'nc-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularForms';
+
+  languages = ['English', 'Spanish', 'Other'];
+  model = new Employee('Darla', 'Smith', true, '1099', 'Spanish');
+
+  lastNameToUpper(value: string) {
+    if (value.length > 0) {
+      this.model.lastName = value.toUpperCase();
+    } else {
+      this.model.lastName = value;
+    }
+  }
 }
