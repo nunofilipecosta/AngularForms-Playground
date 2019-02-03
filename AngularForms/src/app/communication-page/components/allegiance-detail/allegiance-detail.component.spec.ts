@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllegeanceDetailComponent } from './allegiance-detail.component';
+import { AllegianceDetailComponent } from './allegiance-detail.component';
 
-describe('AliasDetailComponent', () => {
-  let component: AllegeanceDetailComponent;
-  let fixture: ComponentFixture<AllegeanceDetailComponent>;
+describe('AllegeanceDetailComponent', () => {
+  let component: AllegianceDetailComponent;
+  let fixture: ComponentFixture<AllegianceDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllegeanceDetailComponent ]
+      declarations: [ AllegianceDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllegeanceDetailComponent);
+    fixture = TestBed.createComponent(AllegianceDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
