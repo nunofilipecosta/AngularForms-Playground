@@ -1,0 +1,5 @@
+<div class="card" style="width: 50rem;" *ngIf="currentBooks?.length">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let item of currentBooks">{{ item }} </li>
+    </ul>
+  </div>

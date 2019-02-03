@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ReactivePageComponent } from './reactive-page/reactive-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommunicationPageComponent } from './communication-page/communication-page.component';
@@ -10,7 +9,8 @@ const routes: Routes = [
   { path: '', component : HomePageComponent },
   { path: 'declarative', component : DeclarativePageComponent},
   { path: 'reactive', component : ReactivePageComponent},
-  { path: 'communication', component: CommunicationPageComponent}
+  { path: 'communication', component: CommunicationPageComponent},
+  { path: 'communication/:id', component: CommunicationPageComponent}
 
 ];
 

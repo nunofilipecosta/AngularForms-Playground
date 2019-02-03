@@ -1,0 +1,11 @@
+<div class="card bg-light mb-3" style="max-width: 50rem;" *ngIf="character">
+  <div class="card-header">{{ character.aliases }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ character.name }}</h5>
+    <p class="card-text">
+      {{ character.culture }} <br />
+      {{ character.playedBy }}
+    </p>
+  </div>
+  <div class="card-footer text-muted">{{ character.url }}</div>
+</div>

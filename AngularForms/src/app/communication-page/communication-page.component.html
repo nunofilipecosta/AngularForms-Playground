@@ -1,3 +1,60 @@
-<p>
-  communication-page works!
-</p>
+<div class="row">
+  <div class="col-md-12"><button type="button" name="" id="btnHideSearch" class="btn btn-primary" (click)="onHideSearch()">Hide Search</button></div>
+</div>
+
+<div class="row">
+  <div class="col-md-12"><nc-search [isVisible]="isSearchVisible" [hitCount]="filteredData?.length" (searchFilterChange)="onSearchFilterChange($event)"></nc-search></div>
+</div>
+<div class="row">
+  <div class="col-md-12">{{ this.message }}</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Aliases</th>
+          <th>Culture</th>
+
+          <th>Played By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredData" [ngClass]="{ 'table-active': item.url === selectedCharacter?.url }">
+          <td scope="row" class="text-center">
+            <button type="button" name="" id="" class="btn btn-primary" (click)="onSelectCharacter(item)"><i class="fa fa-user-circle" aria-hidden="true"></i></button>
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.aliases }}</td>
+          <td>{{ item.culture }}</td>
+          <td>{{ item.playedBy }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <nc-character-detail></nc-character-detail>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <nc-book-detail></nc-book-detail>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <nc-allegiance-detail></nc-allegiance-detail>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><a [routerLink]="['/communication', 5]" routerLinkActive="router-link-active">Link</a></p>
+        <p><a [routerLink]="['/communication']" [queryParams]="{ name: 'cart', code: 1 }" routerLinkActive="router-link-active">param Link</a></p>
+      </div>
+    </div>
+  </div>
+</div>

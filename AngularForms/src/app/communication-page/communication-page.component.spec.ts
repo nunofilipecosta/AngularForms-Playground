@@ -20,6 +20,7 @@ describe('CommunicationPageComponent', () => {
   });
 
   it('should create', () => {
+    expect(component.data.length).toBe(3);
     expect(component).toBeTruthy();
   });
 });
