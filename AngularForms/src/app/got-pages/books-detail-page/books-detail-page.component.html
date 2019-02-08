@@ -1,0 +1,11 @@
+<div class="card bg-light mb-3" style="max-width: 50rem;" *ngIf="book">
+  <div class="card-header">{{ book.name }}</div>
+  <div class="card-body">
+    <h5 class="card-title">1. {{ book.isbn}}</h5>
+    <p class="card-text">2. {{ book.authors }}  </p>
+    <p class="card-text">3. {{ book.numberOfPages }}</p>
+  </div>
+  <div class="card-footer text-muted">{{ book.url }}</div>
+</div>
+
+<a class="btn btn-secondary" role="button" [routerLink]="['/got/books']" routerLinkActive="router-link-active" queryParamsHandling="preserve">back</a>

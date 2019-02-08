@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nc-footer',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  constructor(private readonly router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onNavigate(): void {
+    this.router.navigate(['/got']).then(() => console.log('sucess'));
+    // this.router.navigate('/got');
+    // this.router.navigateByUrl('/got');
   }
-
 }

@@ -1,0 +1,12 @@
+<div class="card bg-light mb-3" style="max-width: 50rem;" *ngIf="character">
+  <div class="card-header">{{ character.name }}</div>
+  <div class="card-body">
+    <h5 class="card-title">1. {{ character.aliases}}</h5>
+    <p class="card-text">2. {{ character.culture }}  </p>
+    <p class="card-text">3. {{ character.playedBy }}</p>
+    <p class="card-text">4. {{ character.allegiances }}</p>
+  </div>
+  <div class="card-footer text-muted">{{ character.url }}</div>
+</div>
+
+<a class="btn btn-secondary" role="button" [routerLink]="['/got/characters']" routerLinkActive="router-link-active" queryParamsHandling="preserve">back</a>

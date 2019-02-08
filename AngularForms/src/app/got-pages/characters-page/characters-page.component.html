@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12"><table class="table table-hover table-bordered table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Aliases</th>
+        <th scope="col">Culture</th>
+        <th scope="col">PlayedBy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of characters">
+        <th scope="row">
+          <a class="btn btn-primary" role="button" [routerLink]="['/got/characters', getId(item)]" routerLinkActive="router-link-active" queryParamsHandling="preserve"><i class="fa fa-user-circle" aria-hidden="true"></i></a></th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.aliases }}</td>
+        <td>{{ item.culture }}</td>
+        <td>{{ item.playedBy }}</td>
+      </tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" [routerLink]="['/got/characters/']" [queryParams]="{page: 1 }" routerLinkActive="router-link-active">First</a></li>
+        <li class="page-item"><a class="page-link" [routerLink]="['/got/characters/']" [queryParams]=" {page: currentPage - 1 }"> {{ currentPage - 1 }} </a></li>
+        <li class="page-item"><a class="page-link" [routerLink]="['/got/characters/']" [queryParams]=" {page: currentPage }">{{ currentPage }}</a></li>
+        <li class="page-item"><a class="page-link" [routerLink]="['/got/characters/']" [queryParams]=" {page: currentPage + 1 }">{{ currentPage + 1 }}</a></li>
+        <li class="page-item"><a class="page-link" [routerLink]="['/got/characters/']" [queryParams]="{page: 20 }" routerLinkActive="router-link-active">Last</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+

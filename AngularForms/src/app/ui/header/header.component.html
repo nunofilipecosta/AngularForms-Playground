@@ -1,23 +1,48 @@
-<nav class="navbar navbar-dark bg-dark mb-5">
-  <a class="navbar-brand" [routerLink]="['/']">Angular & Bootstrap</a>
-  <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" [routerLink]="['/declarative']" >Declarative</a>
-      <a class="nav-item nav-link" [routerLink]="['/reactive']" >Reactive</a>
-      <a class="nav-item nav-link" [routerLink]="['/communication']">Communication</a>
-    </div>
-  </div>
-  <div class="navbar-expand ml-auto navbar-nav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
-        <i class="fa fa-medium"></i>
-      </a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['/']">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/declarative']" routerLinkActive="router-link-active">Declarative<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/reactive" routerLinkActive="router-link-active">Reactive</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/communication']" routerLinkActive="router-link-active">Communication</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/not-found']" routerLinkActive="router-link-active">404</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/got']" routerLinkActive="router-link-active">GoT</a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            GoT
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/got']" routerLinkActive="router-link-active">GoT</a>
+          <a class="dropdown-item" [routerLink]="['/got/characters']" routerLinkActive="router-link-active">Characters</a>
+          <a class="dropdown-item" [routerLink]="['/got/books']" routerLinkActive="router-link-active">Books</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/got/houses']" routerLinkActive="router-link-active">Houses</a>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>

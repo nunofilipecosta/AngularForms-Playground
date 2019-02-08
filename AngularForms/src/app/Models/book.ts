@@ -1,5 +1,3 @@
-
-
 export class Book {
   url: string;
   name: string;
@@ -12,4 +10,9 @@ export class Book {
   released: Date;
   characters: string[];
   povCharacters: string[];
+}
+
+export interface BookResolved {
+  book: Book;
+  error?: any;
 }

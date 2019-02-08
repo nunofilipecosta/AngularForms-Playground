@@ -16,10 +16,11 @@ import { CharaterStore } from './communication-page/services/characters-store.se
 import { CharacterDetailComponent } from './communication-page/components/character-detail/character-detail.component';
 import { BookDetailComponent } from './communication-page/components/book-detail/book-detail.component';
 import { AllegianceDetailComponent } from './communication-page/components/allegiance-detail/allegiance-detail.component';
-
-
+import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
+import { GotPagesModule } from './got-pages/got-pages.module';
 
 @NgModule({
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, AppRoutingModule],
   declarations: [
     AppComponent,
     ReactivePageComponent,
@@ -30,8 +31,9 @@ import { AllegianceDetailComponent } from './communication-page/components/alleg
     CharacterDetailComponent,
     BookDetailComponent,
     AllegianceDetailComponent,
-    ],
-  imports: [BrowserModule, AppRoutingModule,  FormsModule, ReactiveFormsModule, HttpClientModule, UiModule],
+    NotfoundPageComponent
+  ],
+
   providers: [CommunicationPageService, CharaterStore],
   bootstrap: [AppComponent]
 })
