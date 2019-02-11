@@ -1,6 +1,6 @@
 <nc-header></nc-header>
-<div class="container-fluid" style="padding: 20px">
-  <ng-content>
-  </ng-content>
+<!-- <div class="container-fluid" style="padding: 20px" [@slideInAnimation]="o.isActivated ? o.activatedRoute: ''"> -->
+    <div class="container-fluid" style="padding: 20px">
+    <router-outlet #o="outlet"></router-outlet>
 </div>
 <nc-footer></nc-footer>

@@ -25,14 +25,14 @@
         <a class="nav-link" href="#">Link</a>
       </li> -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"  routerLinkActive="active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" routerLinkActive="active"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             GoT
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/got']">GoT</a>
-          <a class="dropdown-item" [routerLink]="['/got/characters']" >Characters</a>
-          <a class="dropdown-item" [routerLink]="['/got/books']" >Books</a>
-          <a class="dropdown-item" [routerLink]="['/got/houses']">Houses</a>
+            <a class="dropdown-item" [routerLink]="['/got']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">GoT</a>
+          <a class="dropdown-item" [routerLink]="['/got/characters']" routerLinkActive="active" >Characters</a>
+          <a class="dropdown-item" [routerLink]="['/got/books']" routerLinkActive="active" >Books</a>
+          <a class="dropdown-item" [routerLink]="['/got/houses']" routerLinkActive="active" >Houses</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item disabled" >Disabled</a>
         </div>

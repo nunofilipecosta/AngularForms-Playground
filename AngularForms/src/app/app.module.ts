@@ -18,9 +18,10 @@ import { BookDetailComponent } from './communication-page/components/book-detail
 import { AllegianceDetailComponent } from './communication-page/components/allegiance-detail/allegiance-detail.component';
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 import { GotPagesModule } from './got-pages/got-pages.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, AppRoutingModule],
   declarations: [
     AppComponent,
     ReactivePageComponent,

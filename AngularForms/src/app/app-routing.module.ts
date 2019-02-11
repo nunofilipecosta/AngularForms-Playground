@@ -7,24 +7,17 @@ import { DeclarativePageComponent } from './declarative-page/declarative-page.co
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 
 const routes: Routes = [
-  { path: '', component : HomePageComponent },
-  { path: 'declarative', component : DeclarativePageComponent},
-  { path: 'reactive', component : ReactivePageComponent},
-  { path: 'communication', component: CommunicationPageComponent},
-  { path: 'communication/:id', component: CommunicationPageComponent},
-  { path: '**', component : NotfoundPageComponent}
-
+  { path: '', component: HomePageComponent },
+  { path: 'declarative', component: DeclarativePageComponent },
+  { path: 'reactive', component: ReactivePageComponent },
+  { path: 'communication', component: CommunicationPageComponent },
+  { path: 'communication/:id', component: CommunicationPageComponent },
+  { path: '**', component: NotfoundPageComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   // imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-
-
-
-
-

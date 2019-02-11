@@ -7,9 +7,10 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, CommonModule, FormsModule, RouterModule],
+  imports: [BrowserModule, BrowserAnimationsModule, CommonModule, FormsModule, RouterModule],
   declarations: [LayoutComponent, HeaderComponent, FooterComponent],
   exports: [LayoutComponent]
 })
