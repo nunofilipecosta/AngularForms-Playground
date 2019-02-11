@@ -7,33 +7,34 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/declarative']" routerLinkActive="router-link-active">Declarative<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/declarative']" routerLinkActive="active">Declarative<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/reactive" routerLinkActive="router-link-active">Reactive</a>
+        <a class="nav-link" routerLink="/reactive" routerLinkActive="active">Reactive</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/communication']" routerLinkActive="router-link-active">Communication</a>
+        <a class="nav-link" [routerLink]="['/communication']" routerLinkActive="active">Communication</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/not-found']" routerLinkActive="router-link-active">404</a>
+        <a class="nav-link" [routerLink]="['/not-found']" routerLinkActive="active">404</a>
       </li>
       <!-- <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/got']" routerLinkActive="router-link-active">GoT</a>
+        <a class="nav-link" [routerLink]="['/got']" routerLinkActive="active">GoT</a>
       </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li> -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle"  routerLinkActive="active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             GoT
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/got']" routerLinkActive="router-link-active">GoT</a>
-          <a class="dropdown-item" [routerLink]="['/got/characters']" routerLinkActive="router-link-active">Characters</a>
-          <a class="dropdown-item" [routerLink]="['/got/books']" routerLinkActive="router-link-active">Books</a>
+            <a class="dropdown-item" [routerLink]="['/got']">GoT</a>
+          <a class="dropdown-item" [routerLink]="['/got/characters']" >Characters</a>
+          <a class="dropdown-item" [routerLink]="['/got/books']" >Books</a>
+          <a class="dropdown-item" [routerLink]="['/got/houses']">Houses</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" [routerLink]="['/got/houses']" routerLinkActive="router-link-active">Houses</a>
+          <a class="dropdown-item disabled" >Disabled</a>
         </div>
       </li>
       <!-- <li class="nav-item">

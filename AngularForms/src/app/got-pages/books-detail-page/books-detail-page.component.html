@@ -1,11 +1,41 @@
-<div class="card bg-light mb-3" style="max-width: 50rem;" *ngIf="book">
-  <div class="card-header">{{ book.name }}</div>
-  <div class="card-body">
-    <h5 class="card-title">1. {{ book.isbn}}</h5>
-    <p class="card-text">2. {{ book.authors }}  </p>
-    <p class="card-text">3. {{ book.numberOfPages }}</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card bg-light mb-3" style="max-width: 50rem;" *ngIf="book">
+      <div class="card-header">{{ book.name }}</div>
+      <div class="card-body">
+        <h5 class="card-title">1. {{ book.isbn }}</h5>
+        <p class="card-text">2. {{ book.authors }}</p>
+        <p class="card-text">3. {{ book.numberOfPages }}</p>
+      </div>
+      <div class="card-footer text-muted">{{ book.url }}</div>
+    </div>
+    <a
+      class="btn btn-secondary"
+      role="button"
+      [routerLink]="['/got/books']"
+      queryParamsHandling="preserve"
+      >back</a
+    >
   </div>
-  <div class="card-footer text-muted">{{ book.url }}</div>
+  <div class="col-md-6">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['characters']"
+          routerLinkActive="active"
+          >Characters</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['authors']" routerLinkActive="active"
+          >Authors</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">disabled</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-<a class="btn btn-secondary" role="button" [routerLink]="['/got/books']" routerLinkActive="router-link-active" queryParamsHandling="preserve">back</a>

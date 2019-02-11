@@ -9,21 +9,44 @@ import { GotStore } from './services/got-store.service';
 import { CharacterDetailPageComponent } from './characters-detail-page/characters-detail-page.component';
 import { BooksDetailPageComponent } from './books-detail-page/books-detail-page.component';
 import { BookResolver } from './services/got-book-resolver.service';
+import { CharactersTabComponent } from './components/characters-tab/characters-tab.component';
+import { AuthorsTabComponent } from './components/authors-tab/authors-tab.component';
 
 const routes: Routes = [
   { path: 'got', component: LandingPageComponent },
   { path: 'got/characters', component: CharactersPageComponent },
-  { path: 'got/characters/:id', component: CharacterDetailPageComponent, data: { pageTitle: 'Characters List' } },
+  {
+    path: 'got/characters/:id',
+    component: CharacterDetailPageComponent,
+    data: { pageTitle: 'Characters List' }
+  },
   { path: 'got/books', component: BooksPageComponent },
-  { path: 'got/books/:id', component: BooksDetailPageComponent, resolve: { resolvedBook : BookResolver } },
+  {
+    path: 'got/books/:id',
+    component: BooksDetailPageComponent,
+    resolve: { resolvedBook: BookResolver },
+    children: [
+      { path: '', redirectTo: 'characters', pathMatch: 'full' },
+      { path: 'characters', component: CharactersTabComponent },
+      { path: 'authors', component: AuthorsTabComponent }
+    ]
+  },
   { path: 'got/houses', component: HousesPageComponent },
   { path: 'got/houses/:id', component: HousesPageComponent }
 ];
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes)],
-  // tslint:disable-next-line:max-line-length
-  declarations: [LandingPageComponent, CharactersPageComponent, BooksPageComponent, HousesPageComponent, CharacterDetailPageComponent, BooksDetailPageComponent],
+  declarations: [
+    LandingPageComponent,
+    CharactersPageComponent,
+    BooksPageComponent,
+    HousesPageComponent,
+    CharacterDetailPageComponent,
+    BooksDetailPageComponent,
+    CharactersTabComponent,
+    AuthorsTabComponent
+  ],
   providers: [GotStore]
 })
 export class GotPagesModule {}
