@@ -5,6 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommunicationPageComponent } from './communication-page/communication-page.component';
 import { DeclarativePageComponent } from './declarative-page/declarative-page.component';
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'reactive', component: ReactivePageComponent },
   { path: 'communication', component: CommunicationPageComponent },
   { path: 'communication/:id', component: CommunicationPageComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: '**', component: NotfoundPageComponent }
 ];
 

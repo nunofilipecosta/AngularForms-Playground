@@ -19,9 +19,11 @@ import { AllegianceDetailComponent } from './communication-page/components/alleg
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 import { GotPagesModule } from './got-pages/got-pages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BottomPagesModule } from './bottom-pages/bottom-pages.module';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, BottomPagesModule, AppRoutingModule],
   declarations: [
     AppComponent,
     ReactivePageComponent,
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CharacterDetailComponent,
     BookDetailComponent,
     AllegianceDetailComponent,
-    NotfoundPageComponent
+    NotfoundPageComponent,
+    LoginPageComponent
   ],
 
   providers: [CommunicationPageService, CharaterStore],

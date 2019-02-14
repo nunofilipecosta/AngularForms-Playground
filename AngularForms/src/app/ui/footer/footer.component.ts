@@ -12,8 +12,20 @@ export class FooterComponent implements OnInit {
   ngOnInit() {}
 
   onNavigate(): void {
-    this.router.navigate(['/got']).then(() => console.log('sucess'));
+    // this.router.navigate(['/got']).then(() => console.log('sucess'));
     // this.router.navigate('/got');
     // this.router.navigateByUrl('/got');
+
+    this.router.navigate([{ outlets: { bottom: ['messages'] } }]);
+    // this.router.navigate(['got',  { outlets: { bottom: ['messages'] } }]);
+    this.router.navigateByUrl('got(bottom:messages)');
+    this.router.navigate([
+      {
+        outlets: {
+          primary: ['got'],
+          bottom: ['messages']
+        }
+      }
+    ]);
   }
 }

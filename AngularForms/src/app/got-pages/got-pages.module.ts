@@ -11,15 +11,14 @@ import { BooksDetailPageComponent } from './books-detail-page/books-detail-page.
 import { BookResolver } from './services/got-book-resolver.service';
 import { CharactersTabComponent } from './components/characters-tab/characters-tab.component';
 import { AuthorsTabComponent } from './components/authors-tab/authors-tab.component';
+import { AuthGuard } from './auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HouseEditGuard } from './house-edit.guard';
 
 const routes: Routes = [
   { path: 'got', component: LandingPageComponent },
   { path: 'got/characters', component: CharactersPageComponent },
-  {
-    path: 'got/characters/:id',
-    component: CharacterDetailPageComponent,
-    data: { pageTitle: 'Characters List' }
-  },
+  { path: 'got/characters/:id', component: CharacterDetailPageComponent, data: { pageTitle: 'Characters List' } },
   { path: 'got/books', component: BooksPageComponent },
   {
     path: 'got/books/:id',
@@ -28,15 +27,15 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'characters', pathMatch: 'full' },
       { path: 'characters', component: CharactersTabComponent },
-      { path: 'authors', component: AuthorsTabComponent }
-    ]
+      { path: 'authors', component: AuthorsTabComponent },
+    ],
   },
-  { path: 'got/houses', component: HousesPageComponent },
-  { path: 'got/houses/:id', component: HousesPageComponent }
+  { path: 'got/houses', component: HousesPageComponent, canActivate: [AuthGuard], canDeactivate : [HouseEditGuard] },
+  //{ path: 'got/houses/:id', component: HousesPageComponent },
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule],
   declarations: [
     LandingPageComponent,
     CharactersPageComponent,
@@ -45,8 +44,8 @@ const routes: Routes = [
     CharacterDetailPageComponent,
     BooksDetailPageComponent,
     CharactersTabComponent,
-    AuthorsTabComponent
+    AuthorsTabComponent,
   ],
-  providers: [GotStore]
+  providers: [GotStore],
 })
 export class GotPagesModule {}

@@ -1,12 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  AbstractControl,
-  ValidatorFn,
-  FormArray
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { NumberValidators } from '../Validators/number.validators';
 
@@ -42,7 +35,7 @@ function emailMatcher(c: AbstractControl): { [key: string]: boolean } | null {
 @Component({
   selector: 'nc-reactive-page',
   templateUrl: './reactive-page.component.html',
-  styleUrls: ['./reactive-page.component.css']
+  styleUrls: ['./reactive-page.component.css'],
 })
 export class ReactivePageComponent implements OnInit, AfterViewInit {
   customerForm: FormGroup;
@@ -54,7 +47,7 @@ export class ReactivePageComponent implements OnInit, AfterViewInit {
 
   private emailValidationMessages = {
     required: 'Email required',
-    email: 'Invalid email'
+    email: 'Invalid email',
   };
 
   constructor(private readonly fb: FormBuilder) {}
@@ -65,21 +58,15 @@ export class ReactivePageComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.customerForm = this.fb.group({
-      firstName: [
-        '',
-        [Validators.required, Validators.minLength(3), Validators.maxLength(50)]
-      ],
-      lastName: [
-        { value: '', disabled: false },
-        [Validators.required, Validators.min(3), Validators.maxLength(3)]
-      ],
+      firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      lastName: [{ value: '', disabled: false }, [Validators.required, Validators.min(3), Validators.maxLength(3)]],
       disabledField: { value: 'do not change', disabled: true },
       emailGroup: this.fb.group(
         {
           email: ['', [Validators.required, Validators.email]],
-          confirmEmail: ['', [Validators.required, Validators.email]]
+          confirmEmail: ['', [Validators.required, Validators.email]],
         },
-        { validator: emailMatcher }
+        { validator: emailMatcher },
       ),
 
       rating: [null, [Validators.required, ratingRange]],
@@ -87,7 +74,7 @@ export class ReactivePageComponent implements OnInit, AfterViewInit {
       phoneNumber: '',
       notification: 'email',
       sendCatalog: true,
-      tags: this.fb.array([this.buildTags()])
+      tags: this.fb.array([this.buildTags()]),
     });
 
     // this.customerForm = new FormGroup({
@@ -104,15 +91,13 @@ export class ReactivePageComponent implements OnInit, AfterViewInit {
     });
 
     const emailControl = this.customerForm.get('emailGroup.email');
-    emailControl.valueChanges
-      .pipe(debounceTime(1000))
-      .subscribe(() => this.setMessage(emailControl));
+    emailControl.valueChanges.pipe(debounceTime(1000)).subscribe(() => this.setMessage(emailControl));
   }
 
   buildTags(): FormGroup {
     return this.fb.group({
       tagType: 'home',
-      tag: ''
+      tag: '',
     });
   }
 
@@ -128,12 +113,12 @@ export class ReactivePageComponent implements OnInit, AfterViewInit {
       disabledField: '',
       emailGroup: {
         email: 'noone@got.com',
-        confirmEmail: 'noone@got.com'
+        confirmEmail: 'noone@got.com',
       },
       notification: 'email',
       rating: 6,
       rating2: 50,
-      sendCatalog: true
+      sendCatalog: true,
     });
 
     this.customerForm.markAsTouched();
