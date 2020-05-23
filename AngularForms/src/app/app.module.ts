@@ -21,9 +21,22 @@ import { GotPagesModule } from './got-pages/got-pages.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BottomPagesModule } from './bottom-pages/bottom-pages.module';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { TestingExamplesPageModule } from './testing-examples-page/testing-examples-page.module';
+
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule, UiModule, GotPagesModule, BottomPagesModule, AppRoutingModule],
+// tslint:disable-next-line: max-line-length
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    UiModule,
+    GotPagesModule,
+    BottomPagesModule,
+    TestingExamplesPageModule,
+    AppRoutingModule],
   declarations: [
     AppComponent,
     ReactivePageComponent,
@@ -35,7 +48,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     BookDetailComponent,
     AllegianceDetailComponent,
     NotfoundPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    //TestingExamplePageComponent
   ],
 
   providers: [CommunicationPageService, CharaterStore],

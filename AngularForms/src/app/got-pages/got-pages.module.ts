@@ -31,7 +31,7 @@ const routes: Routes = [
     ],
   },
   { path: 'got/houses', component: HousesPageComponent, canActivate: [AuthGuard], canDeactivate : [HouseEditGuard] },
-  //{ path: 'got/houses/:id', component: HousesPageComponent },
+  // { path: 'got/houses/:id', component: HousesPageComponent },
 ];
 
 @NgModule({
