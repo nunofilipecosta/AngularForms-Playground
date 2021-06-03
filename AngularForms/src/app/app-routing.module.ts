@@ -6,6 +6,8 @@ import { CommunicationPageComponent } from './communication-page/communication-p
 import { DeclarativePageComponent } from './declarative-page/declarative-page.component';
 import { NotfoundPageComponent } from './notfound-page/notfound-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RxJsComponent } from './modules/rxjs/rxjs-page/rxjs-page.component';
+import { RxJsModule } from './modules/rxjs/rxjs.module';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -14,12 +16,13 @@ const routes: Routes = [
   { path: 'communication', component: CommunicationPageComponent },
   { path: 'communication/:id', component: CommunicationPageComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'rxjs', component: RxJsComponent },
   { path: '**', component: NotfoundPageComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   // imports: [RouterModule.forRoot(routes, {useHash: true})],
-  exports: [RouterModule]
+  exports: [RouterModule, RxJsModule]
 })
 export class AppRoutingModule {}
